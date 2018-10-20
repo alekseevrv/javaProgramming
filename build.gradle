@@ -5,12 +5,14 @@ subprojects{
         mavenLocal()
         maven { url 'http://repo1.maven.org/maven2' }
     }
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
 }
 
 project(':common') {
     dependencies {
         compile 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
-        testCompile 'junit:junit:4.12'
     }
 }
 
@@ -18,10 +20,16 @@ project(':server-ui') {
 }
 
 project(':server-core') {
+    dependencies {
+        compile project(':common')
+    }
 }
 
 project(':tracker-ui') {
 }
 
 project(':tracker-core') {
+    dependencies {
+        compile project(':common')
+    }
 }

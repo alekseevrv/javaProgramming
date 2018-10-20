@@ -9,9 +9,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by jdev on 06.03.2017.
- */
 public class PointDTOTest {
 
     private String expected = "{\"lat\":56.0,\"lon\":74.0,\"autoId\":\"o567gfd\",\"time\":1539962123782}";

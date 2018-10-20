@@ -3,9 +3,6 @@ package jdev.dto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * Created by jdev on 06.03.2017.
- */
 public class PointDTO {
     private double lat;    // широта
     private double lon;    // долгота
