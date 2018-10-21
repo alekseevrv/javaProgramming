@@ -17,15 +17,42 @@ project(':common') {
 }
 
 project(':server-ui') {
+    apply plugin: 'gradle-one-jar'
+    apply plugin: 'java-library-distribution'
+    
+    dependencies {
+        compile project(':common')
+    }
+
+    task fatJar(type: OneJar) {
+        mainClass = 'jdev.server.Main'
+    }
 }
 
 project(':server-core') {
+    apply plugin: 'gradle-one-jar'
+    apply plugin: 'java-library-distribution'
+    
     dependencies {
         compile project(':common')
+    }
+
+    task fatJar(type: OneJar) {
+        mainClass = 'jdev.server.Main'
     }
 }
 
 project(':tracker-ui') {
+    apply plugin: 'gradle-one-jar'
+    apply plugin: 'java-library-distribution'
+    
+    dependencies {
+        compile project(':common')
+    }
+
+    task fatJar(type: OneJar) {
+        mainClass = 'jdev.tracker.Main'
+    }
 }
 
 apply plugin: 'gradle-one-jar'
