@@ -3,7 +3,7 @@ package jdev.dto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class PointDTO {
+public class Point {
     private double lat;    // широта
     private double lon;    // долгота
     private String autoId; // госномер
@@ -40,7 +40,7 @@ public class PointDTO {
 
     @Override
     public String toString() {
-        return "PointDTO{" +
+        return "Point{" +
                 "lat=" + lat +
                 ", lon=" + lon +
                 ", autoId='" + autoId + '\'' +
