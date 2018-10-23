@@ -8,7 +8,7 @@ public class ScheduledService {
 
     private int count;
 
-    @Scheduled(fixedDelay = 3000, initialDelay = 5000)
+    @Scheduled(cron = "*/4 * * * * *")
     private void tick() {
         System.out.println("ScheduledService.tick " + count++);
     }
