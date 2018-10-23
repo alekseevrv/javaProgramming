@@ -1,2 +1,15 @@
-project(':common') {
+subprojects{
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        // https://mvnrepository.com/artifact/org.springframework/spring-core
+        compile group: 'org.springframework', name: 'spring-core', version: '4.3.7.RELEASE'
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+}
+
+project(':injection') {
 }
