@@ -14,11 +14,17 @@ public class InjectedService {
 
     @Value("${bool.prop}")
     Boolean boolProp;
+    private int count;
 
     @PostConstruct
     public void init() {
         System.out.println("intProp = " + intProp);
         System.out.println("boolProp = " + boolProp);
+    }
+
+    @Scheduled(cron = "${cron.prop}")
+    private void tick() {
+        System.out.println("InjectedService.tick " + count++);
     }
 
 }
