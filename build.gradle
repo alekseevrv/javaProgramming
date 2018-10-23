@@ -16,3 +16,6 @@ project(':injection') {
 
 project(':schedulinng') {
 }
+
+project(':properties') {
+}
