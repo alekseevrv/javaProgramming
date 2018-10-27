@@ -1,15 +1,12 @@
 package jdev.server;
 
-import jdev.dto.Point;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-    public static void main(String... args) throws Exception {
-        for (int i=0; i<5; i++) {
-            System.out.println("Main.main say Hello!!!! ++ server-core");
-            Point point = new Point();
-            point.setLat(45);
-            System.out.println(point.toJson());
-            Thread.sleep(1000);
-        }
+    public static void main(String... args) {
+
+        ApplicationContext gps = new AnnotationConfigApplicationContext(GPSContext.class);
+
     }
 }
