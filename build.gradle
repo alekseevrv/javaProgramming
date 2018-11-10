@@ -1,4 +1,23 @@
+subprojects {
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven { url 'http://repo1.maven.org/maven2' }
+    }
+    ext {
+        jettyVersion = "9.4.1.v20170120"
+    }
+}
+
 project(':simple-jsp') {
     apply plugin: 'war'
     apply plugin: 'jetty'
+
+    dependencies {
+        providedCompile "org.eclipse.jetty:jetty-server:$jettyVersion"
+        providedCompile "org.eclipse.jetty:jetty-webapp:$jettyVersion"
+        providedCompile "org.eclipse.jetty:jetty-annotations:$jettyVersion"
+        providedCompile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '8.5.13'
+    }
 }
