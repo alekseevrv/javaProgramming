@@ -22,3 +22,30 @@ project(':simple-jsp') {
         providedCompile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '8.5.13'
     }
 }
+
+// для Spring Boot
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
+    }
+}
+
+project(':mvc-boot') {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+        compile("org.springframework.boot:spring-boot-devtools")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+    }
+
+    jar {
+        baseName = 'gessing-boot'
+        version =  '0.1.0'
+    }
+}
