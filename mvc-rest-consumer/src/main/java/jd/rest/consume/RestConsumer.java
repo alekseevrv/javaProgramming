@@ -14,6 +14,9 @@ public class RestConsumer {
         String response = IOUtils.toString(new URL("http://localhost:8080/counter?name=The+Who"), "UTF8");
         System.out.println(response);
 
+        response = IOUtils.toString(new URL("http://localhost:8080/coords?location=lat56.4,lon34.6"), "UTF8");
+        System.out.println(response);
+
         // преобразуем строку JSON в объект
         /*ObjectMapper mapper = new ObjectMapper();
         Country country = mapper.readValue(response, Country.class);
