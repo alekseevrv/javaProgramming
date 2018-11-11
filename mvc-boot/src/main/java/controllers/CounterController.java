@@ -22,7 +22,12 @@ public class CounterController {
     @RequestMapping("/coords")
     public Response setCoords(@RequestParam(value="location") String location){
         System.out.println(location);
-        Response response = new Response("ok", true);
+        Response response;
+        if (location.split(",").length == 2) {
+            response = new Response("ok", true);
+        } else {
+            response = new Response("fail", false);
+        }
 
         return response;
     }
