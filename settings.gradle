@@ -1,2 +1,3 @@
 include 'simple-jsp'
 include 'mvc-boot'
+include 'mvc-rest-consumer'
