@@ -6,7 +6,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.IOException;
 import java.net.URL;
 
-public class RestConsumer {
+public class CyclicRestConsumer {
 
     public static void main(String... args) throws IOException, InterruptedException {
         // получаем строку JSON от REST
@@ -26,10 +26,10 @@ public class RestConsumer {
                 System.out.println(response);
             } catch (IOException e) {
                 System.out.println(e.getMessage());
-
             } finally {
-                Thread.sleep(2000);
                 System.out.println("==================================================");
+                Thread.sleep(2000);
+
             }
 
         }
