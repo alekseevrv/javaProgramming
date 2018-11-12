@@ -1,8 +1,8 @@
-package jdev.server;
+package jdev.tracker.main;
 
-import jdev.server.services.GPSMessageStorageService;
-import jdev.server.services.GPSMessagingService;
-import jdev.server.services.GPSService;
+import jdev.tracker.services.GPSMessageStorageService;
+import jdev.tracker.services.GPSMessagingService;
+import jdev.tracker.services.GPSService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

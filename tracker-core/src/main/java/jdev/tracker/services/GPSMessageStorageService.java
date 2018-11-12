@@ -1,4 +1,4 @@
-package jdev.server.services;
+package jdev.tracker.services;
 
 import jdev.dto.Point;
 import org.springframework.stereotype.Service;

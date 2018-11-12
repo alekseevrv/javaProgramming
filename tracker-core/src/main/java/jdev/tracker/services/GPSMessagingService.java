@@ -1,4 +1,4 @@
-package jdev.server.services;
+package jdev.tracker.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
