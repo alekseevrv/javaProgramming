@@ -1,4 +1,4 @@
-package jd.rest.consume;
+package jd.domain;
 
 import java.util.Map;
 

@@ -29,6 +29,7 @@ project(':mvc-rest-consumer') {
     dependencies {
         compile group: 'commons-io', name: 'commons-io', version: '2.5'
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.7'
+        compile project(':common')
     }
 }
 
@@ -50,6 +51,7 @@ project(':mvc-boot') {
     dependencies {
         compile("org.springframework.boot:spring-boot-starter-thymeleaf")
         compile("org.springframework.boot:spring-boot-devtools")
+        compile project(':common')
         testCompile("org.springframework.boot:spring-boot-starter-test")
     }
 
@@ -57,4 +59,8 @@ project(':mvc-boot') {
         baseName = 'gessing-boot'
         version =  '0.1.0'
     }
+}
+
+project(':common') {
+    apply plugin: 'java'
 }

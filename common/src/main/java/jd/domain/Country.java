@@ -1,4 +1,4 @@
-package jd.rest.consume;
+package jd.domain;
 
 
 public class Country {
