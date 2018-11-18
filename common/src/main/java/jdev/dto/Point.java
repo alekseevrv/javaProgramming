@@ -4,6 +4,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Point {
+
+    private double lat;         // широта
+    private double lon;         // долгота
+    private String autoId;      // госномер
+    private long time;          // текущее время
+    private float instantSpeed; // мгновенная скорость
+    private int azimuth;        // азимут
+
     public float getInstantSpeed() {
         return instantSpeed;
     }
@@ -19,13 +27,6 @@ public class Point {
     public void setAzimuth(int azimuth) {
         this.azimuth = azimuth;
     }
-
-    private double lat;         // широта
-    private double lon;         // долгота
-    private String autoId;      // госномер
-    private long time;          // текущее время
-    private float instantSpeed; // мгновенная сокрость
-    private int azimuth;        // азимут
 
     public double getLat() {
         return lat;
@@ -73,4 +74,5 @@ public class Point {
     public long getTime() {
         return time;
     }
+
 }

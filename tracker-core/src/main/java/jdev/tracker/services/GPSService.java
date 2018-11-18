@@ -21,7 +21,6 @@ public class GPSService {
 
     @Scheduled(cron = "${cron_gps_service.prop}")
     private void GPSCoordinates() throws InterruptedException {
-
         Point point = new Point();
         point.setLat(gpsLat);
         point.setLon(gpsLon);
@@ -34,7 +33,6 @@ public class GPSService {
         gpsLon = gpsLon + 1.5;
 
         gpsMessageStorageService.put(point);
-
     }
 
 }
