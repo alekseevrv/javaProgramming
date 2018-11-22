@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<link rel="stylesheet" type="text/css" href='/css/web.css' />
+    <head>
+        <title>Пример Spring Security</title>
+    </head>
+    <body bgcolor="#e0e0e0">
+        <h1>6 практическая работа</h1>
+        
+        <p>Раздел для клиентов:</p>
+        <p>Routes <a th:href="@{/routes}">routes</a></p>
+        <p>Routes <a th:href="@{/payments}">payments</a></p>
+
+        <p>Раздел для манагеров:</p>
+        <p>Routes <a th:href="@{/registerClient}">registerClient</a></p>
+
+        <p>Раздел для администраторов:</p>
+        <p>Routes <a th:href="@{/registerManager}">registerManager</a></p>
+
+        <p>Разное:</p>
+        <p>Картинка <img src="/img/moto.jpg" /></p>
+
+        <p>Страница - Home</p>
+        <p>HOME <a th:href="@{/home}">HOME</a></p>
+
+    </body>
+</html>
