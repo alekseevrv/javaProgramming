@@ -1,6 +1,7 @@
 package jdev.dto;
 
 
+import jdev.dto.entity.Point;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;

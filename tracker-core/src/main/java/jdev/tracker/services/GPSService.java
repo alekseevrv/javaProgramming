@@ -1,9 +1,9 @@
 package jdev.tracker.services;
 
+import jdev.dto.entity.Point;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import jdev.dto.Point;
 
 /*
 Сервис GPS. Эмулирует работу GPS.
@@ -15,6 +15,16 @@ public class GPSService {
 
     @Autowired
     private GPSMessageStorageService gpsMessageStorageService;
+
+//    @Autowired
+//    private TrackerPointRepository trackerPointRepository;
+
+//    private TrackerPointRepository trackerPointRepository;
+//
+//    @Autowired
+//    public void setTrackerPointRepository(TrackerPointRepository trackerPointRepository) {
+//        this.trackerPointRepository = trackerPointRepository;
+//    }
 
     private double gpsLat = 1; // широта
     private double gpsLon = 2; // долгота
@@ -33,6 +43,8 @@ public class GPSService {
         gpsLon = gpsLon + 1.5;
 
         gpsMessageStorageService.put(point);
+
+//        trackerPointRepository.save(point);
     }
 
 }

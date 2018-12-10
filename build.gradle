@@ -1,5 +1,6 @@
 subprojects{
     apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
     
     repositories {
         mavenCentral()
@@ -8,8 +9,8 @@ subprojects{
     }
     
     dependencies {
-        compile group: 'org.springframework', name: 'spring-context', version: '4.3.7.RELEASE'
-        testCompile group: 'junit', name: 'junit', version: '4.12'
+        compile("org.springframework:spring-context:4.3.7.RELEASE")
+        testCompile("junit:junit:4.12")
     }
 }
 
@@ -27,6 +28,12 @@ buildscript {
 project(':common') {
     dependencies {
         compile 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
+        compile("org.springframework.boot:spring-boot-starter-web"){
+            exclude module: "spring-boot-starter-tomcat"
+        }
+        compile("org.liquibase:liquibase-core")
+        compile("com.h2database:h2")
+        compile("org.springframework.boot:spring-boot-starter-data-jpa")
     }
 }
 
@@ -60,6 +67,13 @@ project(':server-core') {
         compile project(':common')
         compile("org.springframework.boot:spring-boot-starter-thymeleaf")
         compile("org.springframework.boot:spring-boot-devtools")
+        // JPA
+        compile("org.springframework.boot:spring-boot-starter-web"){
+            exclude module: "spring-boot-starter-tomcat"
+        }
+        compile("org.springframework.boot:spring-boot-starter-data-jpa")
+        compile("org.liquibase:liquibase-core")
+        compile("com.h2database:h2")
     }
 
     task fatJar(type: OneJar) {
@@ -100,7 +114,14 @@ project(':tracker-core') {
         compile project(':common')
         compile("org.springframework.boot:spring-boot-starter-thymeleaf")
         compile("org.springframework.boot:spring-boot-devtools")
-        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.7'
+        compile("com.fasterxml.jackson.core:jackson-databind:2.8.7")
+        // JPA
+        compile("org.springframework.boot:spring-boot-starter-web"){
+            exclude module: "spring-boot-starter-tomcat"
+        }
+        compile("org.springframework.boot:spring-boot-starter-data-jpa")
+        compile("org.liquibase:liquibase-core")
+        compile("com.h2database:h2")
         testCompile("org.springframework.boot:spring-boot-starter-test")
     }
 

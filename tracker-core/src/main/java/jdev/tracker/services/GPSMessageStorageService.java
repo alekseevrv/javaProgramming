@@ -1,6 +1,6 @@
 package jdev.tracker.services;
 
-import jdev.dto.Point;
+import jdev.dto.entity.Point;
 import org.springframework.stereotype.Service;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;

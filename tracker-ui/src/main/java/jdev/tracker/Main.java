@@ -1,6 +1,6 @@
 package jdev.tracker;
 
-import jdev.dto.Point;
+import jdev.dto.entity.Point;
 
 public class Main {
     public static void main(String... args) throws Exception {
