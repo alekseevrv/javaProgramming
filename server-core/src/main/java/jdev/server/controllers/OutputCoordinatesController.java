@@ -17,7 +17,7 @@ public class OutputCoordinatesController {
 
         log.info(point.toJson());
 
-        return "ok";
+        return point.toJson();
 
     }
 
