@@ -1,16 +1,47 @@
 package jdev.dto;
 
+import javax.persistence.*;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import static javax.persistence.GenerationType.AUTO;
+
+
+@Entity
+@Table(name="points")
 public class Point {
 
+    @Id
+    @GeneratedValue(strategy = AUTO)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "latitude")
     private double lat;         // широта
+
+    @Column(name = "longitude")
     private double lon;         // долгота
+
+    @Column(name = "auto_id")
     private String autoId;      // госномер
+
+    @Column(name = "time")
     private long time;          // текущее время
+
+    @Column(name = "instant_speed")
     private float instantSpeed; // мгновенная скорость
+
+    @Column(name = "azimuth")
     private int azimuth;        // азимут
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public float getInstantSpeed() {
         return instantSpeed;
@@ -73,6 +104,10 @@ public class Point {
 
     public long getTime() {
         return time;
+    }
+
+    public void setNowTime() {
+        this.time = System.currentTimeMillis();
     }
 
 }

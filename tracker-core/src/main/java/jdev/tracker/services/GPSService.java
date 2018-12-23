@@ -1,5 +1,6 @@
 package jdev.tracker.services;
 
+import jdev.dto.repo.PointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class GPSService {
 
     @Autowired
     private GPSMessageStorageService gpsMessageStorageService;
+
+    @Autowired
+    private PointRepository pointRepository;
 
     private double gpsLat = 1; // широта
     private double gpsLon = 2; // долгота
@@ -32,7 +36,10 @@ public class GPSService {
         gpsLat = gpsLat + 0.5;
         gpsLon = gpsLon + 1.5;
 
-        gpsMessageStorageService.put(point);
+//        gpsMessageStorageService.put(point);
+
+        // сохранение точки в базу данных
+        pointRepository.save(point);
     }
 
 }
